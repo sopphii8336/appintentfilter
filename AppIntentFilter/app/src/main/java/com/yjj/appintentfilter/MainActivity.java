@@ -34,19 +34,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
         String packageName;
-        packageName = view.getTag()!=null?view.getTag().toString():null;
+        packageName = view.getTag() != null ? view.getTag().toString() : null;
 
         if (view == btnFB) {
+            this.openInstallApp(packageName);
         } else if (view == btnLine) {
+            this.sendMessageToApp(packageName);
 
         } else if (view == btnAPP) {
+            this.openInstallApp(packageName);
 
         } else if (view == btnAPPData) {
+            sendMessageToApp(packageName);
 
         } else if (view == btnAPPSinyi) {
+            this.openInstallApp(packageName);
 
         }
-        this.openInstallApp(packageName);
+    }
+
+
+    private void sendMessageToApp(String packageName) {
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "這是來自外部APP傳遞的訊息"+getPackageName());
+        sendIntent.setType("text/plain");
+        sendIntent.setPackage(packageName);
+        startActivity(sendIntent);
     }
 
 
