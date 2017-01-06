@@ -11,40 +11,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.yjj.appintentfilter.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
-
-    <Button
-        android:id="@+id/btn_line"
+ 
+    <GridView
+        android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:tag="jp.naver.line.android"
-        android:text="line" />
+        android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/btn_fb"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:tag="com.facebook.katana"
-        android:text="facebook" />
 
-    <Button
-        android:id="@+id/btn_app_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="執行外部APP" />
-
-    <Button
-        android:id="@+id/btn_app_2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="執行外部APP 傳遞參數" />
-
-    <Button
-        android:id="@+id/btn_sinyi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="sinyi - ss" />
 </LinearLayout>
