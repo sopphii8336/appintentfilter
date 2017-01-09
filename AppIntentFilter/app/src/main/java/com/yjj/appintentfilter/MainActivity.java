@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d(TAG, "onActivityResult() called with: requestCode = [" + requestCode + "], resultCode = [" + resultCode + "], data = [" + data + "]");
         if (requestCode == RC_INTENT_BACK_SS) {
-            String msg = data.getStringExtra("msg");
+
+            String msg = data != null ? data.getStringExtra("msg") : "";
             if (!TextUtils.isEmpty(msg)) {
 
                 new AlertDialog.Builder(this)
@@ -47,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         GridView gridView = (GridView) findViewById(R.id.gridView);
 
         ArrayList<AppInfoBean> list = new ArrayList<>();
